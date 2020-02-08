@@ -8,13 +8,16 @@
 
 html {
   /* 
+
   The larger ones always goes before the smaller ones 
   because if there was width of 700px both media queries
   tab-land & tab-port will apply because 700px is less
   then 1200 & 900.
+
   Since both of the media queries get applied and have 
   conflicting font-size then last one will get applied 
   which in our situation is tab-port
+
   So what the code below is saying is if the viewport 
   is less then 1200px then make the font-size 56.25%
   but then if the viewport is less then 900px then 
@@ -22,6 +25,7 @@ html {
   which was both less then 900px and 1200px for example
   700px then the last declartion applied query will apply
   which in the code below is tab-port 
+
 */
 
   // This defines what 1rem is
