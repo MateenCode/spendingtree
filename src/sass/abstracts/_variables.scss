@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap");
+
 // COLORS
 $color-primary: #4d5f59;
 $color-secondary: #9cb7ae;
@@ -7,7 +10,8 @@ $color-white: #fff;
 $color-black: #000;
 
 //FONT FAMILY
-$font-family-1: Futura;
+$font-family-1: "Lato", "Open Sans", Helvetica, sans-serif;
+$font-family-2: "Georgia", "Times New Roman", Times, serif;
 
 // FONT SIZE
 $default-font-size: 1.6rem;
