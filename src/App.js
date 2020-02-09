@@ -2,11 +2,13 @@ import React from "react";
 
 import HomePage from "./pages/homepage/homepage.component";
 
+import { AppContainer } from "App.styles";
+
 const App = () => {
   return (
-    <div className='App'>
+    <AppContainer>
       <HomePage />
-    </div>
+    </AppContainer>
   );
 };
 

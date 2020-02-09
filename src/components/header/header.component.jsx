@@ -1,12 +1,22 @@
 import React from "react";
 
-import { ReactComponent as Logo } from "../../assests/logo.svg";
+import {
+  HeaderContainer,
+  SpendingTree,
+  HeaderTwo,
+  HeaderFour,
+  Span
+} from "./header.styles";
 
 const Header = () => {
   return (
-    <div>
-      <Logo />
-    </div>
+    <HeaderContainer>
+      <SpendingTree />
+      <HeaderFour>
+        Please fill <Span>out details below</Span> so we can get you best rate!
+      </HeaderFour>
+      <HeaderTwo>Get Pre Approved for auto loan today! </HeaderTwo>
+    </HeaderContainer>
   );
 };
 
