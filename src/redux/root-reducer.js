@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 
-const rootReducer = combineReducers({});
+import approveReducer from "../redux/approve/approve.reducer";
+
+const rootReducer = combineReducers({ approveReducer });
 
 export default rootReducer;
