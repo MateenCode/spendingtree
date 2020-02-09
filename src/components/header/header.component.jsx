@@ -13,7 +13,7 @@ const Header = () => {
     <HeaderContainer>
       <SpendingTree />
       <HeaderFour>
-        Please fill <Span>out details below</Span> so we can get you best rate!
+        Please fill <Span>out details below</Span> for the best rate
       </HeaderFour>
       <HeaderTwo>Get Pre Approved for auto loan today! </HeaderTwo>
     </HeaderContainer>
