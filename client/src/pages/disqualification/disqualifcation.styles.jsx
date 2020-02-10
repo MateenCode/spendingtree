@@ -13,3 +13,7 @@ export const SpendingTree = styled(Logo)`
   cursor: pointer;
   margin-top: 10rem;
 `;
+
+export const Header = styled.h1`
+  font-size: 3rem;
+`;

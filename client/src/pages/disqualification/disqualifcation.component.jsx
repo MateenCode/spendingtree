@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import {
   SpendingTree,
-  DisqualifcationContainer
+  DisqualifcationContainer,
+  Header
 } from "./disqualifcation.styles";
 
 const useFetch = url => {
@@ -29,7 +30,7 @@ export default () => {
   return (
     <DisqualifcationContainer>
       <SpendingTree />
-      {loading ? <div>...loading</div> : <h1>{value}</h1>}
+      {loading ? <div>...loading</div> : <Header>{value}</Header>}
     </DisqualifcationContainer>
   );
 };
