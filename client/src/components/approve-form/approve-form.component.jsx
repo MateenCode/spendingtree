@@ -37,10 +37,13 @@ export class ApproveForm extends Component {
     this.setState({ [name]: value });
   };
 
+  checkObj = () => {
+    return Object.keys(this.state).some(k => !this.state[k]);
+  };
+
   render() {
     const { disqualified } = this.state;
     const { dispatch, history } = this.props;
-    console.log(this.props);
 
     return (
       <ApproveContainer onSubmit={this.handleSubmit}>
@@ -94,6 +97,7 @@ export class ApproveForm extends Component {
           />
         </Row>
         <CoustomButton
+          disabled={this.checkObj()}
           type='submit'
           onClick={() => {
             dispatch(toggleApprove());
