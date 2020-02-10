@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const Disqualifcation = () => {
-  return <div>Disqualifcation</div>;
+import {
+  SpendingTree,
+  DisqualifcationContainer
+} from "./disqualifcation.styles";
+
+const useFetch = url => {
+  const [value, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(url);
+      const data = await response.json();
+      const value = data.message;
+      setData(value);
+      setLoading(false);
+    }
+    fetchData();
+  }, [url]);
+
+  return { value, loading };
 };
 
-export default Disqualifcation;
+export default () => {
+  const { value, loading } = useFetch("http://localhost:5000/error");
+
+  return (
+    <DisqualifcationContainer>
+      <SpendingTree />
+      {loading ? <div>...loading</div> : <h1>{value}</h1>}
+    </DisqualifcationContainer>
+  );
+};
