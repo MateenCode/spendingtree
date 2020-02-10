@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 import FormInput from "../../components/form-input/form-input.component";
 import CoustomButton from "../../components/custom-button/custom-button.component";
 
 import { ApproveContainer, Row } from "./approve-form.styles";
+
+import { toggleApprove } from "../../redux/approve/approve.action";
 
 export class ApproveForm extends Component {
   state = {
@@ -31,11 +34,14 @@ export class ApproveForm extends Component {
 
   handleChange = event => {
     const { value, name } = event.target;
-
     this.setState({ [name]: value });
   };
 
   render() {
+    const { disqualified } = this.state;
+    const { dispatch, history } = this.props;
+    console.log(this.props);
+
     return (
       <ApproveContainer onSubmit={this.handleSubmit}>
         <Row>
@@ -87,14 +93,24 @@ export class ApproveForm extends Component {
             type='number'
           />
         </Row>
-        <CoustomButton type='submit'>Get Approved!</CoustomButton>
+        <CoustomButton
+          type='submit'
+          onClick={() => {
+            dispatch(toggleApprove());
+            disqualified
+              ? history.push("/disqualified")
+              : history.push("/SignInAndSignUpPage");
+          }}
+        >
+          Get Approved!
+        </CoustomButton>
       </ApproveContainer>
     );
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  disqualified: state.disqualified
+});
 
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ApproveForm);
+export default withRouter(connect(mapStateToProps)(ApproveForm));
