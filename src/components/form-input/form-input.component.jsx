@@ -1,6 +1,11 @@
 import React, { PureComponent } from "react";
 
-import { FieldWrap, Label, FormInputContainer } from "./form-input.styles";
+import {
+  FieldWrap,
+  Label,
+  FormInputContainer,
+  Error
+} from "./form-input.styles";
 
 export class FormInput extends PureComponent {
   state = {
@@ -33,7 +38,6 @@ export class FormInput extends PureComponent {
       email,
       name,
       label,
-      style,
       disabled,
       value,
       additionalInputProps,
@@ -52,14 +56,13 @@ export class FormInput extends PureComponent {
           onBlur={() => this.onBlur()}
           autoComplete={autoComplete}
           onChange={e => this.onChange(e)}
-          style={style}
           placeholder={placeholder}
           {...additionalInputProps}
         />
         {this.state.isRequired === true && !value && (
-          <span>This is a required field</span>
+          <Error>This is a required field</Error>
         )}
-        {!this.state.isEmailValid && email && <span>Email Invalid</span>}
+        {!this.state.isEmailValid && email && <Error>Email Invalid</Error>}
       </FieldWrap>
     );
   }

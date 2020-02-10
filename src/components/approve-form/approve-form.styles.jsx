@@ -8,3 +8,8 @@ export const ApproveContainer = styled.form`
   padding: 2rem;
   border-radius: 4px;
 `;
+
+export const Row = styled.div`
+  display: flex;
+  justify-content: center;
+`;

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import FormInput from "../../components/form-input/form-input.component";
 
-import { ApproveContainer } from "./approve-form.styles";
+import { ApproveContainer, Row } from "./approve-form.styles";
 
 export class ApproveForm extends Component {
   state = {
@@ -15,11 +15,61 @@ export class ApproveForm extends Component {
     error: {}
   };
 
+  handleChange = event => {
+    const { value, name } = event.target;
+
+    this.setState({ [name]: value });
+  };
+
   render() {
     return (
       <ApproveContainer>
-        <FormInput label='Auto Purchase Price' placeholder='Price...' />
-        <FormInput label='Auto Purchase Price' placeholder='Price...' />
+        <Row>
+          <FormInput
+            label='Auto Purchase Price'
+            placeholder='Price...'
+            name='price'
+            onBlur
+            required
+            onChange={this.handleChange}
+          />
+          <FormInput
+            label='Auto Make'
+            placeholder='Make...'
+            name='make'
+            onBlur
+            required
+            onChange={this.handleChange}
+          />
+        </Row>
+        <Row>
+          <FormInput
+            label='Auto Model'
+            placeholder='Model...'
+            name='model'
+            onBlur
+            required
+            onChange={this.handleChange}
+          />
+          <FormInput
+            label='User Estimated Yearly Income'
+            placeholder='Income...'
+            name='income'
+            onBlur
+            required
+            onChange={this.handleChange}
+          />
+        </Row>
+        <Row>
+          <FormInput
+            label='  User Estimated Credit Score'
+            placeholder='Score...'
+            name='score'
+            onBlur
+            required
+            onChange={this.handleChange}
+          />
+        </Row>
       </ApproveContainer>
     );
   }
