@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const CustomButtonContainer = styled.button`
   background-color: #ff704d;
@@ -19,4 +19,10 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   width: 100%;
   margin-top: 1rem;
+  transition-property: background-color;
+  transition-duration: 500ms;
+
+  &:hover {
+    background-color: #e74c3c;
+  }
 `;
